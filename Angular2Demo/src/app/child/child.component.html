@@ -1,0 +1,12 @@
+<h3>Child Component</h3>
+
+<div class="parent-data">
+	Data from parent view : <b>{{ incomingData }}</b>
+</div>
+
+<div class="child-data">
+	<input type="text" class="form-control" 
+		[(ngModel)]='childSampleData' 
+		(ngModelChange)="sendData($event)" 
+>
+</div>

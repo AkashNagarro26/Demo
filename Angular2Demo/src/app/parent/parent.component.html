@@ -1,0 +1,39 @@
+<table>
+<thead>
+<tr>
+    <td>
+        Image
+    </td>
+    <td>
+            Product Name
+        </td>
+        <td>
+                Release Date
+            </td>
+            <td>
+                    Price
+                </td>
+</thead>
+
+        <tbody>
+                <tr *ngFor='let product of productList'>
+                    <td>
+                        <img 
+                            [src]='product.imageUrl'
+                            [title]='product.productName'
+                            [style.width.px]='23'
+                            [style.margin.px]='23'>
+                    </td>
+                    
+                    <td>{{ product.productCode }}</td>
+                    <td>{{ product.releaseDate }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+        </tbody>
+    </table>
+    
+    
+    Data from child {{sampleChildData}}
+    <input type="text" class="form-control" [(ngModel)]='sampleData'>
+    <childComponent [parentData]="sampleData"    (childData)="handleEvent($event)">
+       
